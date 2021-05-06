@@ -1,6 +1,6 @@
 from setuptools import setup,find_packages
 setup(
-    name='termrec',
+    name='pytermrec',
     version='1.0.0',
     description='Record your terminal and play it',
     long_description=open('README.md').read(),

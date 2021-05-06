@@ -6,7 +6,7 @@ Record your terminal and play it
 
 ### From PyPI
 
-`pip3 install termrec`
+`pip3 install pytermrec`
 
 ### From GitHub
 
