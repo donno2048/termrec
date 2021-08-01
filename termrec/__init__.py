@@ -8,7 +8,6 @@ from fcntl import ioctl, fcntl, F_GETFL, F_SETFL
 from signal import signal, SIGCHLD, SIGHUP, SIGTERM, SIGQUIT, set_wakeup_fd, SIGWINCH
 from termios import error, TCSAFLUSH, tcgetattr, tcsetattr, TIOCGWINSZ, TIOCSWINSZ
 from multiprocessing import Process, Queue
-from tty import setraw
 WIDTH, HEIGHT = get_terminal_size()
 ENV = {'SHELL': environ.get('SHELL'), 'TERM': environ.get('TERM')}
 class writer():
@@ -161,8 +160,4 @@ def play(cast):
 def main_rec(path, command = None):
     with async_writer(path, {'width': WIDTH, 'height': HEIGHT, 'timestamp': int(time()), 'env': ENV}) as w: record(['sh', '-c', command or environ.get('SHELL') or 'sh'], w)
 def main_play(path):
-    old_set = tcgetattr(0)
-    try:
-        setraw(0)
-        with file(path) as a: play(a)
-    finally: tcsetattr(0, 1, old_set)
+    with file(path) as a: play(a)
