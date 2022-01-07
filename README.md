@@ -19,7 +19,8 @@ Just type the command in the terminal:
 ### Record to a file
 
 ```sh
-termrec -p <filepath> -c <optional command to record>
+termrec -p <filepath> # record without default command
+termrec -p <filepath> -c <command to record> # record with custom command
 ```
 
 To stop recording use the `exit` command or just <kbd>ctrl</kbd> + <kbd>D</kbs>
@@ -28,4 +29,6 @@ To stop recording use the `exit` command or just <kbd>ctrl</kbd> + <kbd>D</kbs>
 
 ```sh
 termplay -p <filepath>
+# or with a prompt
+termplay -P
 ```
