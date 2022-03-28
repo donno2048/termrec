@@ -2,6 +2,10 @@
 
 Record your terminal and play it
 
+```diff
+- Only works on Linux
+```
+
 ## install
 
 ### From PyPI
