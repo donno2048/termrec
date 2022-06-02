@@ -2,9 +2,8 @@
 
 Record your terminal and play it
 
-```diff
-- Only works on Linux
-```
+> **Warning**
+> Only works on Linux
 
 ## install
 
